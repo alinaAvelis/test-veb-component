@@ -1,13 +1,30 @@
 
-
+import SimpleInput from './modules/SimpleInput';
+import InputLabel from'./modules/InputLabel';
 
 window.addEventListener('DOMContentLoaded', () => {
 
   try {
+
+    class Title extends HTMLElement {
+      
+      connectedCallback() {
+        this.innerHTML = `<h1>
+        ${this.getAttribute('text')}
+        </h1>`
+      }
   
+      static get observedAttributes() {
+        return [forInput, text];
+      }
+    }
+  
+    customElements.define('simple-input', SimpleInput, {extends: 'input'});
+    customElements.define('input-label', InputLabel, {extends: 'label'});
+    customElements.define('title', Title);
   
   } catch(e) {
-    // console.log(e)
+    console.log(e)
   } 
 
   // try {
