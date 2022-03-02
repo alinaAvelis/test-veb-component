@@ -1,9 +1,17 @@
-class InputLabel extends HTMLLabelElement {
+class InputLabel extends HTMLElement {
       
     connectedCallback() {
+        const shadow = this.attachShadow({mode: 'open'});
       let forInput = this.getAttribute('forInput');
-      this.innerHTML = `<label for=${forInput}>
-      Hello, ${this.getAttribute('text')}
+      shadow.innerHTML = `
+      <style>
+        .label {
+          display: block;
+          min-width: 10em;
+        }
+      </style>
+      <label class="label" for=${forInput}>
+         ${this.getAttribute('text')}
       </label>`
     }
 
