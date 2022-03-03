@@ -82,26 +82,20 @@ input {
 	clip: rect(0 0 0 0);
 }
 
-
-
-  
-//   .result {
-// 	width: 50%;
-// 	min-width: 300px;
-//   }
   
   .row {
 	margin-top: 1em;
   }
+
+  .mess-error {
+	  color: red;
+  }
+
+  .hide {
+	  display: none !important;
+  }
   
-//   .row label {
-// 	display: block;
-// 	min-width: 10em;
-//   }
-  
-//   .row input, .row textarea {
-// 	width: 100%;
-//   }
+
 
 
 

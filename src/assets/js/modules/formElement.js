@@ -1,9 +1,6 @@
-// import SimpleInput from '.SimpleInput';
-// import InputLabel from'.InputLabel';
 
 class FormElement extends HTMLElement {
     connectedCallback() {
-        console.log(this.innerText)
         let labelText = this.getAttribute('labelText');
         let labelInput = this.getAttribute('labelInput');
         let inputType = this.getAttribute('inputType');
@@ -25,7 +22,9 @@ class FormElement extends HTMLElement {
             <div class="row" slot="input">
                 <input-label text=${labelText} forInput=${labelInput}></input-label>
                 
-                <simple-input  classInput=${classInput}  type=${inputType}  inputName=${nameInput}  idInput=${inputId}  placeholderText=${placeholderText} ></simple-input>
+                <simple-input  classInput=${classInput}  type=${inputType}  inputName=${nameInput}  idInput=${inputId}  placeholderText=${placeholderText}
+
+                 ></simple-input>
             </div>
         </template>`;
     }

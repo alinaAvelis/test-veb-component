@@ -2,15 +2,16 @@
 class SimpleInput extends HTMLElement  {
       
     connectedCallback() {
-      const shadow = this.attachShadow({mode: 'open'}) || undefined;
+      // const shadow = this.attachShadow({mode: 'open'}) || undefined;
       const type = this.getAttribute('type') || undefined;
       const placeholderText = this.getAttribute('placeholderText');
       const name = this.getAttribute('inputName') || undefined;
       const id = this.getAttribute('idInput') || undefined;
-      let inputValue = this.getAttribute('inputValue');
-      const newValue = (e) => {return e.target.value};
-      const classInput =  this.getAttribute('classInput')
-      shadow.innerHTML = `
+      // let inputValue = this.getAttribute('inputValue');
+      // const newValue = (e) => {return e.target.value};
+      const classInput =  this.getAttribute('classInput');
+      // const onChangeHundle = this.getAttribute("onChangeHundle");
+      this.innerHTML = `
       <style>
         .input {
           display: block;
@@ -39,7 +40,14 @@ class SimpleInput extends HTMLElement  {
       </style>
 
       <input class=${classInput} type=${type}  name=${name} id=${id}  placeholder=${placeholderText} >
-      `      
+      ` 
+      
+      // this.shadowRoot.addEventListener('keydown', (e) => {
+      //   if (e.code === "Enter") {
+      //     onChangeHundle;
+      //     alert(onChangeHundle);
+      //   }
+      // })
       
     }
 
